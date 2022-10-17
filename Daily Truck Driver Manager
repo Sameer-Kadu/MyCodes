@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+struct truck_driver
+{
+    char name[20];
+    char licanse[20];
+    int km;
+    char root[50];
+};
+
+void main()
+{
+    typedef struct truck_driver td;
+    td a[10];
+    char c;
+
+    int n;
+    printf("enter numbers of truck driver you have : ");
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++)
+    {
+
+        printf("\n\nenter a details of drive no. : %d\n", i + 1);
+        printf("enter a name of the driver : ");
+        getchar();
+        gets(a[i].name);
+
+        printf("enter a license number of driver : ");
+        scanf("%s", &a[i].licanse);
+        printf("enter how much km driver travel : ");
+        scanf("%d", &a[i].km);
+        printf("by which root driver travel :  ");
+        getchar(); // this statement for clering the buffer.
+        gets(a[i].root);
+        // scanf("%c", &c); // this statement for clering the buffer.
+        //  scanf("%[^\n]", &a[i].root);//this scanf can also read the spaces in the sentences.
+    }
+    for (int i = 0; i < n; i++)
+    {
+
+        printf("\n\n\ndetails of driver no : %d\nthe  name of the driver  : %s \nthe  license number of driver : %s \ndriver travel : %d km \nroot taken by driver to travel : %s \n", i + 1, a[i].name, a[i].licanse, a[i].km, a[i].root);
+    }
+}
