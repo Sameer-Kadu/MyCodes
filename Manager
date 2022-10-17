@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct company
+{
+    int *id;
+    char name[10];
+} * e;
+int main()
+{
+
+    int c;
+    int n;
+    char com[20];
+    printf("Hello, AK Privated Limited Company is here to help you we collect the data of employs of other company.\n");
+    printf("\nEnter name of your company : ");
+    gets(com);
+    printf("how many characters in your employ id :");
+    scanf("%d", &c);
+    printf("Number of employ work in your company :");
+    scanf("%d", &n);
+    e = (void *)malloc(n * sizeof(void));
+
+    e->id = (int *)malloc(c + 1 * sizeof(int));
+
+    for (int i = 0; i < n; i++)
+    {
+        printf("\n\nEnter details of employ no %d\n", i + 1);
+        printf("name of the employ : ");
+
+        scanf("%s ", &e[i].name);
+
+        printf("id of the employ :");
+
+        scanf(" %d", &e[i].id);
+    }
+
+    printf("\n\nEmploy details of  \"%s\" ", com);
+    for (int i = 0; i < n; i++)
+    {
+        char k;
+
+        printf("\n\nDetails of employ number : %d \nname of the employ : %s \nid of the employ : %d", i + 1, e[i].name, e[i].id);
+    }
+    free(e);
+    free(e->id);
+    return 0;
+}
