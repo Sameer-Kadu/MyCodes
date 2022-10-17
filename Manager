@@ -28,7 +28,10 @@ int main()
         printf("\n\nEnter details of employ no %d\n", i + 1);
         printf("name of the employ : ");
 
-        scanf("%s ", &e[i].name);
+         getchar();
+
+        gets(e[i].name);
+
 
         printf("id of the employ :");
 
